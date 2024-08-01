@@ -52,8 +52,6 @@ function getProguctsToDisplay({
         break;
       case 'Category':
         result.sort((A, B) => {
-          console.log;
-
           const a = A.category.title;
           const b = B.category.title;
 
@@ -94,11 +92,11 @@ export const App = () => {
   const [sortMode, setSortMode] = useState({ column: null, order: null });
 
   const productsToDisplay = getProguctsToDisplay({
-    products: products,
+    products,
     userId: selectedUserId,
-    searchQuery: searchQuery,
+    searchQuery,
     categoryIds: selectedCategoryIds,
-    sortMode: sortMode,
+    sortMode,
   });
 
   const isNothingToDisplay = productsToDisplay.length === 0;

@@ -26,27 +26,28 @@ const ProductTable = ({ products, sortMode, setSortMode }) => {
                 <span className="is-flex is-flex-wrap-nowrap">
                   {column}
                   <a href="#/">
-                    <span
-                      className="icon"
-                      onClick={() => {
-                        if (sortMode.column !== column) {
-                          setSortMode({ column, order: 'asc' });
+                    <span className="icon">
+                      <i
+                        data-cy="SortIcon"
+                        className={`fas ${sortModeIcon}`}
+                        onClick={() => {
+                          if (sortMode.column !== column) {
+                            setSortMode({ column, order: 'asc' });
 
-                          return;
-                        }
+                            return;
+                          }
 
-                        if (sortMode.order === 'asc') {
-                          setSortMode({ column, order: 'desc' });
+                          if (sortMode.order === 'asc') {
+                            setSortMode({ column, order: 'desc' });
 
-                          return;
-                        }
+                            return;
+                          }
 
-                        if (sortMode.order === 'desc') {
-                          setSortMode({ column: null, order: null });
-                        }
-                      }}
-                    >
-                      <i data-cy="SortIcon" className={`fas ${sortModeIcon}`} />
+                          if (sortMode.order === 'desc') {
+                            setSortMode({ column: null, order: null });
+                          }
+                        }}
+                      />
                     </span>
                   </a>
                 </span>
